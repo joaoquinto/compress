@@ -27,7 +27,9 @@ class _CompressState extends State<Compress> {
 
   Future<void> github() async {
     await FlutterShare.share(
-        title: 'GitHub codr', text: 'Aplicativo Tcompress', linkUrl: 'https://github.com/lubritto/flutter_share/blob/master/example/lib/main.dart');
+        title: 'GitHub Code',
+        text: 'GitHub Code',
+        linkUrl: 'https://github.com/joaoquinto/compress');
   }
 
   void _resetFields() {
@@ -152,33 +154,37 @@ class _CompressState extends State<Compress> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: ExpansionTile(
-                      title: Text("Novo Modúlo"),
+                      title: Text("Novo Módulo"),
                       leading: Icon(Icons.new_releases),
+                      
                     ),
                   ),
-                  ExpansionTile(
-                    title: Text("Sobre"),
-                    leading: Icon(Icons.),
-                    children: <Widget>[
-                      ListTile(
-                        leading: Icon(Icons.share,
-                            color: Color.fromRGBO(69, 170, 242, 1.0)),
-                        title: Text("Compartilhamento do App"),
-                        onTap: () {
-                          share();
-                        },
-                      ),
-                      ListTile(
-                        leading: Icon(
-                          Icons.share,
-                          color: Color.fromRGBO(69, 170, 242, 1.0),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: ExpansionTile(
+                      title: Text("Sobre"),
+                      leading: Icon(Icons.info),
+                      children: <Widget>[
+                        ListTile(
+                          leading: Icon(Icons.share,
+                              color: Color.fromRGBO(69, 170, 242, 1.0)),
+                          title: Text("Compartilhamento do App"),
+                          onTap: () {
+                            share();
+                          },
                         ),
-                        title: Text("GitHub Code"),
-                        onTap: (){
-                          github();
-                        },
-                      )
-                    ],
+                        ListTile(
+                          leading: Icon(
+                            Icons.share,
+                            color: Color.fromRGBO(69, 170, 242, 1.0),
+                          ),
+                          title: Text("GitHub Code"),
+                          onTap: () {
+                            github();
+                          },
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),

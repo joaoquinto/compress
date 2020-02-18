@@ -24,6 +24,13 @@ class _ReferState extends State<Refer> {
         chooserTitle: 'Compartilhamente do Tcompress');
   }
 
+  Future<void> github() async {
+    await FlutterShare.share(
+        title: 'GitHub Code',
+        text: 'GitHub Code',
+        linkUrl: 'https://github.com/joaoquinto/compress');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -97,14 +104,30 @@ class _ReferState extends State<Refer> {
                       ),
                     ),
                   ),
-                  ListTile(
-                    leading: Icon(Icons.share,
-                        color: Color.fromRGBO(69, 170, 242, 1.0)),
-                    title: Text("Compartilhamento do App"),
-                    onTap: () {
-                      share();
-                    },
-                  )
+                  ExpansionTile(
+                    title: Text("Sobre"),
+                    leading: Icon(Icons.info),
+                    children: <Widget>[
+                      ListTile(
+                        leading: Icon(Icons.share,
+                            color: Color.fromRGBO(69, 170, 242, 1.0)),
+                        title: Text("Compartilhamento do App"),
+                        onTap: () {
+                          share();
+                        },
+                      ),
+                      ListTile(
+                        leading: Icon(
+                          Icons.share,
+                          color: Color.fromRGBO(69, 170, 242, 1.0),
+                        ),
+                        title: Text("GitHub Code"),
+                        onTap: () {
+                          github();
+                        },
+                      )
+                    ],
+                  ),
                 ],
               ),
             ),
