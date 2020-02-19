@@ -14,6 +14,7 @@ class Compress extends StatefulWidget {
 }
 
 class _CompressState extends State<Compress> {
+  
   final asset1 = "images/compress/Tc.gif";
 
   Future<void> share() async {
@@ -41,23 +42,25 @@ class _CompressState extends State<Compress> {
 
   void _txCompressao() {
     setState(() {
-      //Cilindro
+     
+      //Volume do Cilindro
       final double pi = 3.14;
       double r = double.parse(raioController.text);
       double h = double.parse(alturaController.text);
-      double vLC = (pi * r * r) * h;
-
-      double vlCc = double.parse(volumeCamaraController.text);
-      double vlJ = double.parse(volumeJuntaCabecoteController.text);
-      // Câmara de Combustão
-      double vLCM = vlCc + vlJ;
+      double vCilindro = (pi * r * r) * h;
+      
+      // Volume da Câmara de Combustão
+      double vCamara = double.parse(volumeCamaraController.text);
+      double vJunta = double.parse(volumeJuntaCabecoteController.text);
+      double vCamaraCombustao = vCamara + vJunta;
+      
       // Taxa de Compressão
-      double tX = (vLC + vLCM) / vLCM;
+      double tC = (vCilindro + vCamaraCombustao) / vCamaraCombustao;
 
       showDialog(
           context: context,
           builder: (BuildContext context) {
-            return buildAlertDiaolg(vLC, vLCM, tX);
+            return buildAlertDiaolg(vCilindro, vCamaraCombustao, tC);
           });
     });
   }
@@ -75,8 +78,7 @@ class _CompressState extends State<Compress> {
   final TextEditingController raioController = TextEditingController();
   final TextEditingController alturaController = TextEditingController();
   final TextEditingController volumeCamaraController = TextEditingController();
-  final TextEditingController volumeJuntaCabecoteController =
-      TextEditingController();
+  final TextEditingController volumeJuntaCabecoteController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -156,7 +158,6 @@ class _CompressState extends State<Compress> {
                     child: ExpansionTile(
                       title: Text("Novo Módulo"),
                       leading: Icon(Icons.new_releases),
-                      
                     ),
                   ),
                   Padding(

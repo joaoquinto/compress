@@ -60,7 +60,7 @@ Widget builResult(Function onchanged) {
 }
 
 // Result Alert
-Widget buildAlertDiaolg(double vLC, double vLCM, double tX) {
+Widget buildAlertDiaolg(double vCilindro, double vCamaraCombustao, double tC) {
   return AlertDialog(
     title: Center(
         child: Text(
@@ -77,21 +77,21 @@ Widget buildAlertDiaolg(double vLC, double vLCM, double tX) {
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
             ),
           ),
-          Text("${vLC.toStringAsFixed(1)}m³",
+          Text("${vCilindro.toStringAsFixed(1)}m³",
               style: TextStyle(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold)),
           Divider(color: Colors.black),
           Text("Câmara de Combustão: ",
               style: TextStyle(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold)),
-          Text("${vLCM.toStringAsFixed(1)}m³",
+          Text("${vCamaraCombustao.toStringAsFixed(1)}m³",
               style: TextStyle(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold)),
           Divider(color: Colors.black),
           Text("Taxa de Compressão:",
               style: TextStyle(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold)),
-          Text("${tX.toStringAsFixed(1) } : 1",
+          Text("${tC.toStringAsFixed(1)} : 1",
               style: TextStyle(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold)),
         ],
