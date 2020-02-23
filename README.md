@@ -56,7 +56,7 @@ Fórmula do Cálculo:
 
 ![08](img/08.png)
 
-Resultado do cálculo:
+Resultado do Cálculo:
 
 ![03](img/03.png)
 
