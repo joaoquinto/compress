@@ -2,10 +2,6 @@
 
 Um projeto feito totalmente em Flutter, com o intuito de utilizar novas Widgets e packages. E facilitar o cálculo da Taxa de Compressão de um motor
 
-Aplicativo de medição da taxa de compressão de um motor, feito em Flutter.
-
-
-
 Como: 
 =====
  1. Card [Widget]
@@ -19,6 +15,7 @@ Como:
  9. Alert Dialog   [Widget]
  11. Flutter Share [Package]
  12. ExpansionTile [Widget]
+ 13. flutter_launcher_icons [Package]
 
 
 # Inicio.
@@ -31,7 +28,7 @@ Sem previsão.
 Obs:
 ====
 Ainda é necessário explorar a responsividade para tratar os espaços mortos que ficam em telas grandes.
-Icone para o App
+Icone para o App [FEITO]
 
 
 Vontades Futuras
@@ -39,3 +36,34 @@ Vontades Futuras
 1. Design Pattern
 2. Flutter Web
 3. Flutter Desktop
+
+Print Screen
+===============
+
+Ícone do app:
+
+![05](img/05.png)
+
+Splash Screen:
+
+![01](img/01.png)
+
+Taxa de Compressão:
+
+![02](img/02.png)
+
+Resultado do cálculo:
+
+![03](img/03.png)
+
+Menu:
+
+![04](img/04.png)
+
+Referêcias Estudantis:
+
+![05](img/06.png)
+
+Sobre:
+
+![06](img/07.png)
