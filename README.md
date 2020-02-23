@@ -52,6 +52,10 @@ Taxa de Compressão:
 
 ![02](img/02.png)
 
+Fórmula do Cálculo:
+
+![08](img/08.png)
+
 Resultado do cálculo:
 
 ![03](img/03.png)
