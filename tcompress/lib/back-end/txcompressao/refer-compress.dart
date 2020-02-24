@@ -5,12 +5,7 @@ import 'package:flutter_share/flutter_share.dart';
 import 'package:tcompress/back-end/txcompressao/compress.dart';
 import 'package:tcompress/ui/ui-txcompressao/refer.ui-compress.dart';
 
-class Refer extends StatefulWidget {
-  @override
-  _ReferState createState() => _ReferState();
-}
-
-class _ReferState extends State<Refer> {
+class Refer extends StatelessWidget {
   final asset = "images/compress/cilindro.png";
   final asset1 = "images/compress/Tc.gif";
   final asset2 = "images/compress/Vcam.png";

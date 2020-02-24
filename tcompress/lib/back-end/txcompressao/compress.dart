@@ -14,7 +14,6 @@ class Compress extends StatefulWidget {
 }
 
 class _CompressState extends State<Compress> {
-  
   final asset1 = "images/compress/Tc.gif";
 
   Future<void> share() async {
@@ -42,18 +41,17 @@ class _CompressState extends State<Compress> {
 
   void _txCompressao() {
     setState(() {
-     
       //Volume do Cilindro
       final double pi = 3.14;
       double r = double.parse(raioController.text);
       double h = double.parse(alturaController.text);
       double vCilindro = (pi * r * r) * h;
-      
+
       // Volume da Câmara de Combustão
       double vCamara = double.parse(volumeCamaraController.text);
       double vJunta = double.parse(volumeJuntaCabecoteController.text);
       double vCamaraCombustao = vCamara + vJunta;
-      
+
       // Taxa de Compressão
       double tC = (vCilindro + vCamaraCombustao) / vCamaraCombustao;
 
@@ -78,7 +76,8 @@ class _CompressState extends State<Compress> {
   final TextEditingController raioController = TextEditingController();
   final TextEditingController alturaController = TextEditingController();
   final TextEditingController volumeCamaraController = TextEditingController();
-  final TextEditingController volumeJuntaCabecoteController = TextEditingController();
+  final TextEditingController volumeJuntaCabecoteController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
