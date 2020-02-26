@@ -2,6 +2,8 @@
 
 Um projeto feito totalmente em Flutter, com o intuito de utilizar novas Widgets e packages. E facilitar o cálculo da Taxa de Compressão de um motor
 
+Com versão Web e Mobile.
+
 Como: 
 =====
  1. Card [Widget]
@@ -28,21 +30,21 @@ Sem previsão.
 Obs:
 ====
 Ainda é necessário explorar a responsividade para tratar os espaços mortos que ficam em telas grandes.
+
 Icone para o App [FEITO]
 
 
 Vontades Futuras
 ================
-1. Design Pattern
-2. Flutter Web
-3. Flutter Desktop
+1. Flutter Web [FEITO]
+2. Flutter Desktop
 
-Print Screen
-===============
+Print Screen mobile
+====================
 
 Ícone do app:
 
-![05](img/05.png)
+![05](img/01web.png)
 
 Splash Screen:
 
@@ -71,3 +73,35 @@ Referêcias Estudantis:
 Sobre:
 
 ![06](img/07.png)
+
+
+Print Screen Web
+================
+
+Splash Screen:
+
+![01](img/01web.png)
+
+Taxa de Compressão:
+
+![02](img/02web.png)
+
+Fórmula do Cálculo:
+
+![08](img/03web.png)
+
+Resultado do Cálculo:
+
+![03](img/04web.png)
+
+Menu:
+
+![04](img/05web.png)
+
+Referêcias Estudantis:
+
+![05](img/07web.png)
+
+Sobre:
+
+![06](img/06web.png)
