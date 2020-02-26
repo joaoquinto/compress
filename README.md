@@ -81,7 +81,7 @@ Print Screen Web
 
 Splash Screen:
 
-![01](img/01web.png)
+![10](img/01web.png)
 
 Taxa de Compressão:
 
