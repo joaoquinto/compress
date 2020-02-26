@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   splashscreen: ^1.2.0
   url_launcher: ^5.4.1
+  url_launcher_web: ^0.1.1+1
   sliding_up_panel: ^1.0.0
   flutter_share: ^1.0.2+1
   flutter_launcher_icons: ^0.7.4

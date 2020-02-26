@@ -1,9 +1,13 @@
 import 'dart:async';
+import 'dart:io' show Platform;
 
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:tcompress/back-end/txcompressao/compress.dart';
 import 'package:tcompress/ui/ui-txcompressao/refer.ui-compress.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Refer extends StatelessWidget {
   final asset = "images/compress/cilindro.png";
@@ -11,20 +15,53 @@ class Refer extends StatelessWidget {
   final asset2 = "images/compress/Vcam.png";
 
   Future<void> share() async {
-    await FlutterShare.share(
-        title: 'Compartilhamente do Tcompress',
-        text: 'Aplicativo Tcompress',
-        linkUrl:
-            'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing',
-        chooserTitle: 'Compartilhamente do Tcompress');
+    if(kIsWeb){
+      _driveWebapp();
+    }else {
+      await FlutterShare.share(
+          title: 'Compartilhamente do Tcompress',
+          text: 'Aplicativo Tcompress',
+          linkUrl:
+          'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing',
+          chooserTitle: 'Compartilhamente do Tcompress');
+    }
+
   }
 
-  Future<void> github() async {
-    await FlutterShare.share(
-        title: 'GitHub Code',
-        text: 'GitHub Code',
-        linkUrl: 'https://github.com/joaoquinto/compress');
+  // Para o uso no Flutter WEB
+  _driveWebapp()async{
+    final url = 'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing';
+
+    if( await canLaunch(url) ){
+      await launch(url);
+    }else {
+      throw " O link $url não pode ser acessado";
+    }
+
   }
+
+
+  Future<void> github() async {
+    if(kIsWeb){
+      _githubWeb();
+    }else{
+      await FlutterShare.share(
+          title: 'GitHub Code',
+          text: 'GitHub Code',
+          linkUrl: 'https://github.com/joaoquinto/compress');
+    }
+  }
+  // Para o uso no Flutter WEB
+  _githubWeb()async{
+    final urlG = "https://github.com/joaoquinto/compress";
+
+    if(await canLaunch(urlG)){
+      await launch(urlG);
+    }else{
+      throw "O link $urlG não pode ser acessado";
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {

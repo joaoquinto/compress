@@ -239,12 +239,12 @@ packages:
     source: hosted
     version: "1.0.5"
   url_launcher_web:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: url_launcher_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0+2"
+    version: "0.1.1+1"
   vector_math:
     dependency: transitive
     description:
