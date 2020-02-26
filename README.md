@@ -44,7 +44,7 @@ Print Screen mobile
 
 Ícone do app:
 
-![05](img/01web.png)
+![05](img/01.png)
 
 Splash Screen:
 
