@@ -1,11 +1,10 @@
 import 'dart:async';
-import 'dart:io' show Platform;
-
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:tcompress/back-end/txcompressao/compress.dart';
+import 'package:tcompress/ui/functionwidget/web.dart';
 import 'package:tcompress/ui/ui-txcompressao/refer.ui-compress.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -15,56 +14,69 @@ class Refer extends StatelessWidget {
   final asset2 = "images/compress/Vcam.png";
 
   Future<void> share() async {
-    if(kIsWeb){
+    if (kIsWeb) {
       _driveWebapp();
-    }else {
+    } else {
       await FlutterShare.share(
           title: 'Compartilhamente do Tcompress',
           text: 'Aplicativo Tcompress',
           linkUrl:
-          'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing',
+              'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing',
           chooserTitle: 'Compartilhamente do Tcompress');
     }
-
   }
 
   // Para o uso no Flutter WEB
-  _driveWebapp()async{
-    final url = 'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing';
+  _driveWebapp() async {
+    final url =
+        'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing';
 
-    if( await canLaunch(url) ){
+    if (await canLaunch(url)) {
       await launch(url);
-    }else {
+    } else {
       throw " O link $url não pode ser acessado";
     }
-
   }
 
-
   Future<void> github() async {
-    if(kIsWeb){
+    if (kIsWeb) {
       _githubWeb();
-    }else{
+    } else {
       await FlutterShare.share(
           title: 'GitHub Code',
           text: 'GitHub Code',
           linkUrl: 'https://github.com/joaoquinto/compress');
     }
   }
+
   // Para o uso no Flutter WEB
-  _githubWeb()async{
+  _githubWeb() async {
     final urlG = "https://github.com/joaoquinto/compress";
 
-    if(await canLaunch(urlG)){
+    if (await canLaunch(urlG)) {
       await launch(urlG);
-    }else{
+    } else {
       throw "O link $urlG não pode ser acessado";
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
+    Future<void> webApp() async {
+      if (kIsWeb) {
+        return showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return buildWebAlertshare();
+            });
+      } else {
+        await FlutterShare.share(
+            title: "Link para a versão Web",
+            text: 'Link para a versão Web',
+            linkUrl: 'https://joaoquinto.github.io/compress/web/index.html#/');
+      }
+    }
+
     return MaterialApp(
         debugShowCheckedModeBanner: true,
         home: Scaffold(
@@ -141,9 +153,19 @@ class Refer extends StatelessWidget {
                     leading: Icon(Icons.info),
                     children: <Widget>[
                       ListTile(
+                        leading: Icon(
+                          Icons.share,
+                          color: Color.fromRGBO(69, 170, 242, 1.0),
+                        ),
+                        title: Text("GitHub Code"),
+                        onTap: () {
+                          github();
+                        },
+                      ),
+                      ListTile(
                         leading: Icon(Icons.share,
                             color: Color.fromRGBO(69, 170, 242, 1.0)),
-                        title: Text("Compartilhamento do App"),
+                        title: Text("Versão Mobile ANDROID"),
                         onTap: () {
                           share();
                         },
@@ -153,9 +175,9 @@ class Refer extends StatelessWidget {
                           Icons.share,
                           color: Color.fromRGBO(69, 170, 242, 1.0),
                         ),
-                        title: Text("GitHub Code"),
+                        title: Text("Versão Web"),
                         onTap: () {
-                          github();
+                          webApp();
                         },
                       )
                     ],

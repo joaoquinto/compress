@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io' show Platform;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -11,9 +10,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:flutter_share/flutter_share.dart';
 
-
-
-
 class Compress extends StatefulWidget {
   @override
   _CompressState createState() => _CompressState();
@@ -23,52 +19,51 @@ class _CompressState extends State<Compress> {
   final asset1 = "images/compress/Tc.gif";
 
   Future<void> share() async {
-    if(kIsWeb){
+    if (kIsWeb) {
       _driveWebapp();
-    }else {
+    } else {
       await FlutterShare.share(
           title: 'Compartilhamente do Tcompress',
           text: 'Aplicativo Tcompress',
           linkUrl:
-          'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing',
+              'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing',
           chooserTitle: 'Compartilhamente do Tcompress');
     }
-
   }
 
   // Para o uso no Flutter WEB
-  _driveWebapp()async{
-    final url = 'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing';
+  _driveWebapp() async {
+    final url =
+        'https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing';
 
-    if( await canLaunch(url) ){
+    if (await canLaunch(url)) {
       await launch(url);
-    }else {
+    } else {
       throw " O link $url não pode ser acessado";
     }
-
   }
 
   Future<void> github() async {
-if(kIsWeb){
-  _githubWeb();
-}else{
-  await FlutterShare.share(
-      title: 'GitHub Code',
-      text: 'GitHub Code',
-      linkUrl: 'https://github.com/joaoquinto/compress');
-}
- }
-  // Para o uso no Flutter WEB
-  _githubWeb()async{
-    final urlG = "https://github.com/joaoquinto/compress";
-
-    if(await canLaunch(urlG)){
-      await launch(urlG);
-    }else{
-      throw "O link $urlG não pode ser acessado";
+    if (kIsWeb) {
+      _githubWeb();
+    } else {
+      await FlutterShare.share(
+          title: 'GitHub Code',
+          text: 'GitHub Code',
+          linkUrl: 'https://github.com/joaoquinto/compress');
     }
   }
 
+  // Para o uso no Flutter WEB
+  _githubWeb() async {
+    final urlG = "https://github.com/joaoquinto/compress";
+
+    if (await canLaunch(urlG)) {
+      await launch(urlG);
+    } else {
+      throw "O link $urlG não pode ser acessado";
+    }
+  }
 
   _launchUrl() async {
     final email = "mailto:joaovictoroliveirapereira6522@gmail.com";
@@ -76,7 +71,11 @@ if(kIsWeb){
     if (await canLaunch(email)) {
       await launch(email);
     } else {
-      throw "Não foi possivel enviar";
+      return showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return buildWebAlert();
+          });
     }
   }
 
@@ -111,7 +110,20 @@ if(kIsWeb){
     });
   }
 
-
+  Future<void> webApp() async {
+    if (kIsWeb) {
+      return showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return buildWebAlertshare();
+          });
+    } else {
+      await FlutterShare.share(
+          title: "Link para a versão Web",
+          text: 'Link para a versão Web',
+          linkUrl: 'https://joaoquinto.github.io/compress/web/index.html#/');
+    }
+  }
 
   final TextEditingController raioController = TextEditingController();
   final TextEditingController alturaController = TextEditingController();
@@ -121,9 +133,8 @@ if(kIsWeb){
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
-        debugShowCheckedModeBanner: true,
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
             appBar: AppBar(
               title: Text(
@@ -207,9 +218,19 @@ if(kIsWeb){
                       leading: Icon(Icons.info),
                       children: <Widget>[
                         ListTile(
+                          leading: Icon(
+                            Icons.share,
+                            color: Color.fromRGBO(69, 170, 242, 1.0),
+                          ),
+                          title: Text("GitHub Code"),
+                          onTap: () {
+                            github();
+                          },
+                        ),
+                        ListTile(
                           leading: Icon(Icons.share,
                               color: Color.fromRGBO(69, 170, 242, 1.0)),
-                          title: Text("Compartilhamento do App"),
+                          title: Text("Versão Mobile ANDROID"),
                           onTap: () {
                             share();
                           },
@@ -219,9 +240,9 @@ if(kIsWeb){
                             Icons.share,
                             color: Color.fromRGBO(69, 170, 242, 1.0),
                           ),
-                          title: Text("GitHub Code"),
+                          title: Text("Versão Web"),
                           onTap: () {
-                            github();
+                            webApp();
                           },
                         )
                       ],
