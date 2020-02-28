@@ -223,6 +223,7 @@ class _CompressState extends State<Compress> {
                             color: Color.fromRGBO(69, 170, 242, 1.0),
                           ),
                           title: Text("GitHub Code"),
+                          subtitle: Text("Versão 1.0"),
                           onTap: () {
                             github();
                           },
@@ -231,6 +232,7 @@ class _CompressState extends State<Compress> {
                           leading: Icon(Icons.share,
                               color: Color.fromRGBO(69, 170, 242, 1.0)),
                           title: Text("Versão Mobile ANDROID"),
+                          subtitle: Text("Ainda sem responsividade."),
                           onTap: () {
                             share();
                           },
@@ -241,6 +243,7 @@ class _CompressState extends State<Compress> {
                             color: Color.fromRGBO(69, 170, 242, 1.0),
                           ),
                           title: Text("Versão Web"),
+                          subtitle: Text("Ainda sem responsividade."),
                           onTap: () {
                             webApp();
                           },

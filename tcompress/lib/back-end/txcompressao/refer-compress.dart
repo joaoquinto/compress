@@ -158,6 +158,7 @@ class Refer extends StatelessWidget {
                           color: Color.fromRGBO(69, 170, 242, 1.0),
                         ),
                         title: Text("GitHub Code"),
+                        subtitle: Text("Versão 1.0"),
                         onTap: () {
                           github();
                         },
@@ -166,6 +167,7 @@ class Refer extends StatelessWidget {
                         leading: Icon(Icons.share,
                             color: Color.fromRGBO(69, 170, 242, 1.0)),
                         title: Text("Versão Mobile ANDROID"),
+                        subtitle: Text("Ainda sem responsividade."),
                         onTap: () {
                           share();
                         },
@@ -176,6 +178,7 @@ class Refer extends StatelessWidget {
                           color: Color.fromRGBO(69, 170, 242, 1.0),
                         ),
                         title: Text("Versão Web"),
+                        subtitle: Text("Ainda sem responsividade."),
                         onTap: () {
                           webApp();
                         },

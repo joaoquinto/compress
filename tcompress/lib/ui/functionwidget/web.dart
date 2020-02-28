@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // Função de Alerta de erro.
 Widget buildWebAlert() {
   return AlertDialog(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
     title: Center(
       child: Text("Informativo"),
     ),
@@ -17,8 +18,12 @@ Widget buildWebAlert() {
 
 Widget buildWebAlertshare() {
   return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       title: Center(
-        child: Text("AVISO"),
+        child: Text(
+          "AVISO",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       content: Container(
           height: 100,

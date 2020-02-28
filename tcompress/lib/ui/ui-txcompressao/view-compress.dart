@@ -62,10 +62,12 @@ Widget builResult(Function onchanged) {
 // Result Alert
 Widget buildAlertDiaolg(double vCilindro, double vCamaraCombustao, double tC) {
   return AlertDialog(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
     title: Center(
-        child: Text(
-      "Taxa De compressão",
-    )),
+        child: Text("Taxa De compressão",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ))),
     content: Container(
       height: 200,
       child: Column(
