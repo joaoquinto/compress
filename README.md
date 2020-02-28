@@ -45,35 +45,35 @@ Print Screen mobile
 
 Ícone do app:
 
-![05](img/05.png)
+![05](img/01.png)
 
 Splash Screen:
 
-![01](img/01.png)
+![01](img/02.png)
 
 Taxa de Compressão:
 
-![02](img/02.png)
+![02](img/03.png)
 
 Fórmula do Cálculo:
 
-![08](img/08.png)
+![08](img/04.png)
 
 Resultado do Cálculo:
 
-![03](img/03.png)
+![03](img/05.png)
 
 Menu:
 
-![04](img/04.png)
+![04](img/06.png)
 
 Referêcias Estudantis:
 
-![05](img/06.png)
+![05](img/07.png)
 
 Sobre:
 
-![06](img/07.png)
+![06](img/08.png)
 
 
 Print Screen Web
@@ -101,8 +101,12 @@ Menu:
 
 Referêcias Estudantis:
 
-![05](img/07web.png)
+![05](img/06web.png)
 
 Sobre:
 
-![06](img/06web.png)
+![06](img/07web.png)
+
+Alert informativo web:
+
+![07](img/08web.png)
