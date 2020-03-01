@@ -51,10 +51,10 @@ githubWeb() async {
   }
 }
 
-launchUrl(BuildContext context) async {
+// Url Lancher
+launchUrl(bool value, context) async {
   final email = "mailto:joaovictoroliveirapereira6522@gmail.com";
-
-  if (await canLaunch(email)) {
+  if (value) {
     await launch(email);
   } else {
     return showDialog(
@@ -63,6 +63,12 @@ launchUrl(BuildContext context) async {
           return buildWebAlert();
         });
   }
+}
+
+// Validação do código
+Future<bool> valida() async {
+  final email = "mailto:joaovictoroliveirapereira6522@gmail.com";
+  return await canLaunch(email);
 }
 
 Future<void> webApp(BuildContext context) async {

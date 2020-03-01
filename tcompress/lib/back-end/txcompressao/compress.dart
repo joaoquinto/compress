@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tcompress/back-end/drawer.dart';
 import 'package:tcompress/back-end/txcompressao/refer-compress.dart';
-import 'package:tcompress/ui/functionwidget/web.dart';
 import 'package:tcompress/ui/ui-txcompressao/refer.ui-compress.dart';
 import 'package:tcompress/ui/ui-txcompressao/view-compress.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class Compress extends StatefulWidget {
@@ -14,20 +12,6 @@ class Compress extends StatefulWidget {
 
 class _CompressState extends State<Compress> {
   final asset1 = "images/compress/Tc.gif";
-
-  _launchUrl() async {
-    final email = "mailto:joaovictoroliveirapereira6522@gmail.com";
-
-    if (await canLaunch(email)) {
-      await launch(email);
-    } else {
-      return showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return buildWebAlert();
-          });
-    }
-  }
 
   void _resetFields() {
     raioController.text = "";
@@ -255,7 +239,16 @@ class _CompressState extends State<Compress> {
                       SizedBox(
                         height: 5.5,
                       ),
-                      buildButtonHelp(launchUrl(context)),
+                      FutureBuilder(
+                        future: valida(),
+                        builder: (context, AsyncSnapshot<bool> snapshot) {
+                          if (snapshot.hasData) {
+                            return buildButtonHelp(snapshot.data, context);
+                          } else {
+                            return Container();
+                          }
+                        },
+                      ),
                     ],
                   ),
                 ))));

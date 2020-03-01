@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tcompress/back-end/drawer.dart';
 
 // Inputs
 Widget buildTextField(String label, TextEditingController controller) {
@@ -24,7 +25,7 @@ Widget buildTextField(String label, TextEditingController controller) {
 }
 
 // Button help
-Widget buildButtonHelp(dynamic onchanged) {
+Widget buildButtonHelp(bool value, BuildContext context) {
   return Column(
     children: <Widget>[
       Container(
@@ -35,7 +36,7 @@ Widget buildButtonHelp(dynamic onchanged) {
             color: Colors.white,
             size: 28,
           ),
-          onPressed: onchanged,
+          onPressed: () => launchUrl(value, context),
         ),
       )
     ],
