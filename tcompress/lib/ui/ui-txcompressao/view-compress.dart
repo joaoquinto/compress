@@ -24,7 +24,7 @@ Widget buildTextField(String label, TextEditingController controller) {
 }
 
 // Button help
-Widget buildButtonHelp(Function onchanged) {
+Widget buildButtonHelp(dynamic onchanged) {
   return Column(
     children: <Widget>[
       Container(
