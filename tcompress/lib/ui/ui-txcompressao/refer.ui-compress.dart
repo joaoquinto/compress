@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-Widget explainText(String title, double tamanho) {
+Widget explainText(String title, double tamanho, double elevation) {
   return SizedBox(
     width: double.infinity,
     height: tamanho,
     child: Card(
-      elevation: 15,
+      elevation: elevation,
       child: Column(
         children: <Widget>[
           Center(
@@ -14,7 +14,9 @@ Widget explainText(String title, double tamanho) {
             child: Text(
               "$title",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 17, ),
+              style: TextStyle(
+                fontSize: 17,
+              ),
             ),
           )),
         ],
@@ -23,12 +25,13 @@ Widget explainText(String title, double tamanho) {
   );
 }
 
-Widget explainTextWithImg(String title, String img, double tamanho, heigthcard) {
+Widget explainTextWithImg(
+    String title, String img, double tamanho, heigthcard, double elevation) {
   return SizedBox(
     width: double.infinity,
     height: 170,
     child: Card(
-      elevation: 15,
+      elevation: elevation,
       child: Column(
         children: <Widget>[
           Center(

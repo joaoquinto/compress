@@ -11,7 +11,9 @@ class Compress extends StatefulWidget {
 }
 
 class _CompressState extends State<Compress> {
+  final asset = "images/compress/cilindro.png";
   final asset1 = "images/compress/Tc.gif";
+  final asset2 = "images/compress/Vcam.png";
 
   void _resetFields() {
     raioController.text = "";
@@ -142,7 +144,7 @@ class _CompressState extends State<Compress> {
                             color: Color.fromRGBO(69, 170, 242, 1.0),
                           ),
                           title: Text("GitHub Code"),
-                          subtitle: Text("Versão 1.0"),
+                          subtitle: Text("Versão 1.0.0"),
                           onTap: () {
                             github();
                           },
@@ -176,22 +178,77 @@ class _CompressState extends State<Compress> {
             backgroundColor: Color.fromRGBO(69, 170, 242, 1.0),
             body: SlidingUpPanel(
                 backdropEnabled: true,
-                minHeight: 22.0,
-                maxHeight: 200,
+                minHeight: 50.0,
+                maxHeight: 390,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(24.0),
                   topRight: Radius.circular(24.0),
                 ),
                 panel: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Column(
+                  child: ListView(
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: explainTextWithImg(
-                            "Taxa de Compressão", asset1, 270, 250),
+                            "Volume do Cilindro", asset, 200.0, 200, 0.0),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: explainText(
+                            "Como todo sólido geométrico o cilindro possui volume. O volume de um cilindro é dado através da multiplicação da área da base pela altura. O cilindro está presente em diversas situações cotidianas pela sua capacidade de armazenamento de substâncias, por exemplo, botijão de gás, reservatório de água ou combustível entre outros. As duas bases de um cilindro possuem a forma circular e a área do círculo é determinada pela expressão π*r². Assim temos que o volume do cilindro é dado pela seguinte expressão matemática:",
+                            308,
+                            0.0),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: explainTextWithImg(
+                            "Volume da Câmara de Combustão",
+                            asset2,
+                            500,
+                            250,
+                            0.0),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: explainText(
+                            "Feita em duas etapas: medição do volume da câmara e medição do volume da junta.Medição do volume da câmara de combustão: Com o cabeçote fora do motor, prenda-o em uma morsa, mantendo-o perfeitamente nivelado e com as câmares de combustão voltadas para cima. Utilizando uma seringa de 10ml cheia de água ou gasolina, injete a quantidade de líquido suficiente para preencher completamente a câmara de combustão, até nivelá-la com o restante do cabeçote. Anote o volume encontrado com a precisão de uma casa decimal",
+                            300,
+                            0.0),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: explainText(
+                            "Medição do volume da junta do cabeçote: utilizando um paquimetro, meça o diâmetro interno do anel metálico da junta do cabeçote e meça a espessura da junta, anote os valores e utilize a fórmula acima para calcular o volume da junta. Anote o volume encontrado com a precisão de uma casa decimal (ex. 10,5cm3). Esse valor deverá ser SOMADO ao valor encontrado na medição do volume da câmara de combustão ",
+                            300,
+                            0.0),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: explainTextWithImg(
+                            "Taxa de Compressão", asset1, 270, 250, 0.0),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: explainText(
+                            "A taxa de compressão é um conceito intrínseco aos motores a combustão interna. É um valor numérico adimensional representando a proporção entre o volume aspirado somado ao volume da câmara de combustão em relação ao volume da câmara de combustão. Por exemplo, quando se diz que um motor possui uma taxa de compressão de 10:1 significa que a razão entre o volume do cilindro quando o pistão se encontra no Ponto Morto Inferior e quando se encontra no Ponto Morto Superior é igual a 10/ A Taxa de compressão e denominada pela quantidade de ar que passa pelo carburador.",
+                            360,
+                            0.0),
                       ),
                     ],
+                  ),
+                ),
+                collapsed: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(24.0),
+                          topRight: Radius.circular(24.0)),
+                      color: Color.fromRGBO(52, 73, 94, 1.0)),
+                  child: Center(
+                    child: Text(
+                      "Referências Estudantis",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
                 body: SingleChildScrollView(
