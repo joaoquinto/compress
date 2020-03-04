@@ -4,6 +4,12 @@ Um projeto feito totalmente em Flutter, com o intuito de utilizar novas Widgets 
 
 Com versão Web e Mobile.
 
+Versão WEB:
+https://joaoquinto.github.io/compress/web/#/
+
+Versão MOBILE: 
+https://drive.google.com/drive/folders/1nZY8gpscFXMVDNcsf_R8xGvdjDKjN24e?usp=sharing
+
 Como: 
 =====
  1. Card [Widget]
