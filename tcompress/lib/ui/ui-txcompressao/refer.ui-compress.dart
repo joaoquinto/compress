@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget explainText(String title, double tamanho, double elevation) {
+Widget explainText(String title, double elevation) {
   return SizedBox(
     width: double.infinity,
-    height: tamanho,
     child: Card(
       elevation: elevation,
       child: Column(
@@ -48,6 +47,33 @@ Widget explainTextWithImg(
               width: tamanho,
             ),
           ),
+        ],
+      ),
+    ),
+  );
+}
+
+
+// Bug No Align do texto e não funciona no Web.
+Widget richText01(BuildContext context, String boldtext, String text) {
+  return SizedBox(
+    width: double.infinity,
+    child: Card(
+      child: Column(
+        children: <Widget>[
+          SelectableText.rich(TextSpan(children: <TextSpan>[
+            TextSpan(
+                text: boldtext,
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                )),
+            TextSpan(
+              text: text,
+              style: TextStyle(fontSize: 17, color: Colors.black),
+            )
+          ]))
         ],
       ),
     ),
