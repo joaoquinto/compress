@@ -28,10 +28,10 @@ Como:
 
 
 # Inicio.
-Quarta-feira, ‎29‎ de ‎janeiro‎ de ‎2020.
+janeiro‎ de ‎2020.
 
 # Fim.
-Sem previsão.
+Março de 2020
 
 
 Obs:
